@@ -1,0 +1,72 @@
+----> Criar projeto em java:
+
+1 - Ctrl + Shif + P
+2 - Java: Create Java Project
+3 - No build tools
+4 - Project name
+
+
+
+----> Delimitar numeros de casas decimais:
+
+double numero = 12.1234f;
+System.out.printf("%.2f", numero);
+Sera exibido no console o numero: 12,12
+
+Obs: Por padrao brasileiro o ponto separador é a virgula "," porem é possivel alterar para que seja
+utilizado um ponto "." como ponto separador, para isso é necessario ulizar o Locale.US, colocando
+o codigo "Locale.setDefault(Locale.US);" no inicio do code block
+
+Ex:
+System.out.printf(Locale.US,"%.2f", numero);
+Sera exibido em console o numero: 12.12
+
+
+
+----> Formatacao de String
+
+%s – Para strings.
+%d – Para inteiros.
+%f – Para números de ponto flutuante (pode ser formatado com casas decimais como %.2f).
+%n – Para quebra de linha (equivalente a \n).
+
+Pode utilizar String.format() para criar strings com várias formatações,
+como controle de número de casas decimais, alinhamento de texto, e muito mais.
+
+
+
+----> Casting
+
+double a = 6.5;
+int b = (int)a;
+System.out.println(b);
+
+O resultado exibido no console sera 6, pos houve a conversao do numero decimal para inteiro
+
+
+
+----> Entrada de dados
+
+1 - importar "java.util.Scanner"
+2 - Criar objeto para scanear: Scanner sc = new Scanner(System.in);
+3 - Apartir daqui é so usar o objeto, ex:
+
+String nome;
+nome = sc.next();
+
+int numero_inteiro;
+numero_inteiro = sc.nextInt();
+
+double numero_flutuante;
+numero_flutuante = sc.nextDouble();
+
+char caracter;
+caracter = sc.next().charAt(0);
+
+
+
+----> Criando um metodo
+
+modificador_de_acesso tipo_de_retorno nomeDoMetodo(parâmetros) {
+    // corpo do método
+}
