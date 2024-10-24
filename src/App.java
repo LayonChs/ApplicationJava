@@ -3,7 +3,7 @@ import repository.*;
 public class App{
     public static void main(String[] args){
         connection.connect_db();
-        //search.getAll();
+        search.getAll();
         search.getById(1);
         connection.disconnect_db();
     }
