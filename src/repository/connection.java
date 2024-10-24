@@ -24,7 +24,7 @@ public class connection {
         try{
             cn = DriverManager.getConnection(url); // Se a conexao falhar, cn é null
             if(cn != null){
-                System.out.println("DB: Conected");
+                System.out.println("DB: Conected\n");
             }
         }
         catch(SQLException e){
@@ -38,7 +38,7 @@ public class connection {
         if(cn != null){
             try{
                 cn.close();
-                System.out.println("DB: Desconected");
+                System.out.printf("\nDB: Desconected");
             }
             catch(SQLException e){
                 System.out.println(e.getMessage());

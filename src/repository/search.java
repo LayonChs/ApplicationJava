@@ -4,6 +4,7 @@ package repository;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 
 public class search {
@@ -29,6 +30,29 @@ public class search {
             System.out.println(e.getMessage());
             System.out.println(e.getErrorCode());
             System.out.println(e.getSQLState());
+        }
+    }
+
+    public static void getById(int getId){
+        if(connection.cn != null){
+            String query = "SELECT * FROM login WHERE id = ?";
+            try(PreparedStatement smt = connection.cn.prepareStatement(query)){
+                smt.setInt(1, getId);
+                ResultSet response = smt.executeQuery();
+
+                while(response.next()){
+                    String id = response.getString("id");
+                    String email = response.getString("email");
+                    String password = response.getString("password");
+                
+                    System.out.printf("Id: %s%nEmail: %s%nPassword: %s%n",id,email,password);
+                }
+
+            }catch(SQLException e){
+                System.out.println(e.getMessage());
+                System.out.println(e.getErrorCode());
+                System.out.println(e.getSQLState());
+            }
         }
     }
 }
